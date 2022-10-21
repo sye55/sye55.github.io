@@ -6,7 +6,6 @@
 
 body {
     width: 100%;
-    background-color: silver;
 }
 
 a {
@@ -17,8 +16,6 @@ a {
 h1 {
     font-size: 2.5rem;
 }
-
-
 
 h3 {
     font-size: 1.5rem;
@@ -33,7 +30,7 @@ nav {
     padding: 0 30px;
     justify-content: space-between;
     align-items: center;
-    background-color: #062d44;
+    background: linear-gradient(0.25turn, #040b24, #000000);
     color: white;
     font-size: 1.25rem;
 }
@@ -45,7 +42,7 @@ navbar ul {
 }
 
 navbar ul li {
-    padding-right: 10px;
+    padding-right: 25px;
 }
 
 navbar ul :last-child {
@@ -64,7 +61,7 @@ navbar a:hover{
     height: 600px;
     background-image: url("../img/lightbulb.jpg");
     background-size: cover;
-    background-position: 70% 100% ;
+    background-position: 73% 100% ;
 }
 
 .hero div {
@@ -127,6 +124,19 @@ navbar a:hover{
     color: white;
 }
 
+.hrow{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(0.25turn, #003caa, #00aa33); 
+}
+
+    
+.aboutMe{
+    background: linear-gradient(0.25turn, #040b24, #000000);
+}
+
 .aboutMe p{
     margin-top: 20px;
+    
 }
