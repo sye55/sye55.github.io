@@ -6,6 +6,7 @@
 
 body {
     width: 100%;
+    background-color: #040b24;
 }
 
 a {
@@ -94,8 +95,8 @@ navbar a:hover{
 
 .skillset {
     padding: 20px;
-    margin-top: 10px;
     width: 100%;
+    background: white;
 }
 
 .icons {
@@ -105,6 +106,7 @@ navbar a:hover{
     flex-wrap: wrap;
     justify-content: space-between;
     list-style-type: none;
+    
 }
 
 .icons img {
