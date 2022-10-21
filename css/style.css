@@ -6,6 +6,7 @@
 
 body {
     width: 100%;
+    background-color: silver;
 }
 
 a {
@@ -29,6 +30,7 @@ nav {
     width: 100%;
     height: 60px;
     display: flex;
+    padding: 0 30px;
     justify-content: space-between;
     align-items: center;
     background-color: #062d44;
@@ -36,19 +38,18 @@ nav {
     font-size: 1.25rem;
 }
 
-logo {
-    margin-left: 5%;
-}
-
-navbar {
-    width: 30%;
-    margin-right: 5%;
-}
-
 navbar ul {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
+}
+
+navbar ul li {
+    padding-right: 10px;
+}
+
+navbar ul :last-child {
+    padding-right: 0px;
 }
 
 navbar a:hover{
@@ -100,23 +101,23 @@ navbar a:hover{
     width: 100%;
 }
 
-.skillset ul {
-    margin: 50px 0px;
+.icons {
+    width: 100%;
+    padding: 20px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     list-style-type: none;
 }
 
-.skillset ul img {
-    width: 100%;
-    /* height: auto; */
-    max-height: 100px;
+.icons img {
+    width: auto;
+    height: 100px;
     padding: 10px;
     filter: grayscale(1);
 }
 
-.skillset ul img:hover{
+.icons img:hover{
     filter: none;
 }
 
