@@ -5,8 +5,12 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// fetch('http://example.com/movies.json')
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
 async function getStreets() {
-    let url = '/.streets.geojson'
+    let url = './streets.geojson'
     let obj = await (await fetch(url)).json();
     
     //console.log(obj);
