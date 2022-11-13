@@ -11,7 +11,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 async function getStreets() {
     let url = './streets.geojson'
-    let obj = await (await fetch(url)).json();
+    let obj = await (await fetch(url, {credentials: 'same-origin'})).json();
     
     //console.log(obj);
     return obj;
