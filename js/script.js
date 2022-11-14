@@ -8,11 +8,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 async function getStreets() {
     const resp = await fetch('./js/streets.geojson');
-    console.log(resp);
     const data = await resp.json();
     
-    console.log(data);
     L.geoJSON(data).addTo(map);
+    map.fitBounds(map.getBounds());
+    map.setMaxBounds([
+        [57.30, -1.8],
+        [57.0, -2.4]
+    ]);
     
 }
 var streets = getStreets();
