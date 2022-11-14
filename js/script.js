@@ -5,19 +5,15 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-// fetch('http://example.com/movies.json')
-//   .then((response) => response.json())
-//   .then((data) => console.log(data));
 
 async function getStreets() {
-    let url = './streets.geojson'
-    let obj = await (await fetch(url, {credentials: 'same-origin'})).json();
+    const resp = await fetch('./js/streets.geojson');
+    console.log(resp);
+    const data = await resp.json();
     
-    //console.log(obj);
-    return obj;
+    console.log(data);
+    L.geoJSON(data).addTo(map);
+    
 }
-
 var streets = getStreets();
-console.log(streets);
 
-L.geoJSON(streets).addTo(map);
