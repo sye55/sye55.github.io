@@ -22,17 +22,28 @@ async function getStreets() {
  
     
     function onEachFeature(feature, layer){
-
-        layer.bindPopup(feature.properties.name, {className: "custom-popup", autoPan: false});
+        var hasTouchScreen = 'ontouchstart' in window;
         layer.setStyle({color: 'blue', weight: 8});
+
+        if (hasTouchScreen) {
+            layer.bindPopup(feature.properties.name, {className: "custom-popup", autoPan: false});
+        } else {
+            layer.bindPopup(feature.properties.name);
+
+        }
+        
+
+        // mouseover events
         layer.on('mousemove mouseover', function(e) {
-            let ev = e.originalEvent;
-            let divBox = d.getBoundingClientRect();
-            let p = L.point([ev.clientX - divBox.left, ev.clientY - divBox.top]); // cursor
+            let ev = e.originalEvent; 
+            let divBox = d.getBoundingClientRect(); // get pixel space of map canvas
+            let p = L.point([ev.clientX - divBox.left, ev.clientY - divBox.top]); // cursor position on canvas
             let latlng = map.containerPointToLatLng(p);
-            layer.setStyle({color: 'yellow'});
-            layer.openPopup(latlng);
+            layer.setStyle({color: 'yellow'}); // highlight the feature
+            layer.openPopup(latlng); // open popup near mousover location
         });
+
+        // mouseout events
         layer.on('mouseout', function(e) {
             layer.setStyle({color: 'blue'});
             layer.closePopup();
