@@ -143,7 +143,7 @@ navbar a:hover{
     
 }
 
-#map { height: 800px; }
+#map { height: 600px; }
 
 .custom-popup .leaflet-popup-content-wrapper {
     background:#2c3e50;
@@ -151,3 +151,142 @@ navbar a:hover{
     font-size:24px;
     line-height:24px;
     }
+
+
+
+/* #sidebar {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    height:50px;
+    width: 50px;
+    background-color: #00aa33;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border-style: none;
+    z-index: 2000;
+} */
+
+.container{
+    top: 15px;
+    left: 20px;
+    height: 70px;
+    width: 70px;
+    background-color: #fff;
+    border-radius: 50px;
+    position: relative;
+    transition: 0.4s ease;
+    z-index: 1000;
+
+}
+
+.toggleBox{
+    position: relative;
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+}
+
+.icon{
+    position: absolute;
+    height: 4px;
+    width: 35px;
+    background-color: #242F36;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+}
+.toggleBox.active .icon{
+    width: 0px;
+}
+
+.icon::before,.icon::after{
+    position: absolute;
+    content:'';
+    height: 4px;
+    width: 35px;
+    background-color: #242F36;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.icon::before{
+    top: 12px;
+}
+
+.icon::after{
+    bottom: 8px;
+}
+
+.toggleBox.active .icon::before{
+    width: 40px;
+    transform-origin: right;
+    transform: translate(-25px, 4px) rotate(45deg);
+}
+
+.toggleBox.active .icon::after{
+    width: 40px;
+    transform-origin: right;
+    transform: translate(-25px, -6px) rotate(-45deg);
+}
+
+.maptools {
+    width: 100%;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.maptools:last-child {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.maptools li:hover .material-icons{
+    transition: 0.08s ease-in-out;
+    color: #26bd3f;
+}
+
+
+.container.active {
+    height: 420px;
+}
+
+.container.active .maptools{
+    visibility: visible;
+}
+li {
+    list-style-type: none;
+}
+
+.material-icons{
+    color: #242F36;
+    font-size: 36px;
+}
+
+li a span {
+    position: relative;
+    display: block;
+    padding: 17px 0;
+    width: 100%;
+    text-align: center;
+    transform: scale(0);
+}
+
+.container.active .maptools li a span{
+    transform: scale(1);
+    transition: 0.4s ease;
+    transition-delay: calc(0.06s * var(--v));
+}
+
+.toggleBox.active:hover .icon::before{
+    background-color: red;
+}
+
+.toggleBox.active:hover .icon::after{
+    background-color: red;
+}
+

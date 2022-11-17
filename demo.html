@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <logo>LOGO</logo>
+        <navbar>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./sktest.html">SK Test</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </navbar>
+    
+    </nav>
+    <section class="hrow"></section>
+    <section class="body">
+        <div class="container">
+            <a href="#" class="toggleBox">
+                <span class="icon"></span> 
+            </a>
+            <ul class="maptools">
+                <li>
+                    <a href="#">
+                        <span class="material-icons" style="--v:1">edit_road</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-icons" style="--v:2">museum</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-icons" style="--v:3">attractions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-icons" style="--v:4">restaurant</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-icons" style="--v:5">school</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        var toggleClick = document.querySelector(".toggleBox");
+        var container = document.querySelector(".container");
+        toggleClick.addEventListener('click', () => {
+            toggleClick.classList.toggle('active');
+            container.classList.toggle('active');
+        })
+    </script>
+
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+
+            background: linear-gradient(45deg, #242F36, #161d2c);
+        }
+
+        .body{
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .container{
+            top: 15px;
+            height: 70px;
+            width: 70px;
+            background-color: #fff;
+            border-radius: 50px;
+            position: relative;
+            transition: 0.4s ease;
+        
+        }
+
+        .toggleBox{
+            position: relative;
+            display: block;
+            height: 70px;
+            width: 70px;
+            border-radius: 50px;
+        }
+
+        .icon{
+            position: absolute;
+            height: 4px;
+            width: 35px;
+            background-color: #242F36;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50px;
+        }
+        .toggleBox.active .icon{
+            width: 0px;
+        }
+
+        .icon::before,.icon::after{
+            position: absolute;
+            content:'';
+            height: 4px;
+            width: 35px;
+            background-color: #242F36;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .icon::before{
+            top: 12px;
+        }
+
+        .icon::after{
+            bottom: 8px;
+        }
+
+        .toggleBox.active .icon::before{
+            width: 40px;
+            transform-origin: right;
+            transform: translate(-25px, 4px) rotate(45deg);
+        }
+
+        .toggleBox.active .icon::after{
+            width: 40px;
+            transform-origin: right;
+            transform: translate(-25px, -6px) rotate(-45deg);
+        }
+
+        .maptools {
+            width: 100%;
+            visibility: hidden;
+        }
+
+        
+        .container.active {
+            height: 420px;
+        }
+
+        .container.active .maptools{
+            visibility: visible;
+        }
+        li {
+            list-style-type: none;
+        }
+
+        .material-icons{
+            color: #242F36;
+            font-size: 36px;
+        }
+
+        li a span {
+            position: relative;
+            display: block;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            transform: scale(0);
+        }
+
+        .container.active .maptools li a span{
+            transform: scale(1);
+            transition: 0.4s ease;
+            transition-delay: calc(0.06s * var(--v));
+        }
+
+    </style>
+</body>
+</html>
